@@ -1,4 +1,8 @@
+import Navbar from '@/components/Navbar'
 import './globals.css'
+
+import { ThemeProvider } from "@/components/theme-provider"
+
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,9 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="min-h-screen bg-background flex flex-col items-center">
-          {children}
-        </main>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <main className="min-h-screen bg-background flex flex-col items-center max-w-6xl mx-auto">
+            <Navbar />
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   )

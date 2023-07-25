@@ -4,6 +4,7 @@ import Link from 'next/link'
 import LogoutButton from '../components/LogoutButton'
 import SupabaseLogo from '../components/SupabaseLogo'
 import NextJsLogo from '../components/NextJsLogo'
+import { ModeToggle } from '@/components/ThemeToggle'
 
 export const dynamic = 'force-dynamic'
 
@@ -59,18 +60,22 @@ export default async function Index() {
                 <LogoutButton />
               </div>
             ) : (
-              <Link
-                href="/login"
-                className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
-              >
-                Login
-              </Link>
+              <div>
+
+                <Link
+                  href="/login"
+                  className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
+                >
+                  Login
+                </Link>
+                <ModeToggle />
+              </div>
+
             )}
           </div>
         </div>
       </nav>
-
-      <div className="animate-in flex flex-col gap-14 opacity-0 max-w-4xl px-3 py-16 lg:py-24 text-foreground">
+      <div className="flex flex-col gap-14 max-w-4xl px-3 py-16 lg:py-24">
         <div className="flex flex-col items-center mb-4 lg:mb-12">
           <div className="flex gap-8 justify-center items-center">
             <Link href="https://supabase.com/" target="_blank">
