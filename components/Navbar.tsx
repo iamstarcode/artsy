@@ -21,7 +21,13 @@ function Navbar() {
           </ButtonIcon>
         )}
       </div>
-      <NavigationMenuDemo />
+      <div className="flex-shrink-0">
+        {width > 768 ? (
+          <NavigationMenuDemo />
+        ) : (
+          <Image alt="logo" width="85" height="82" src="/img/logo.png" />
+        )}
+      </div>
       <div className="flex basis-1/2 justify-end space-x-1">
         <ButtonIcon>
           <Search className="h-4 w-4" />
